@@ -1,5 +1,7 @@
 @import "tailwindcss";
-@plugin "daisyui";
+@import "tailwindcss-primeui";
+@import 'primeicons/primeicons.css'
+
 
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
