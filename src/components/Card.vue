@@ -14,7 +14,7 @@ import Card from 'primevue/card'
 // import Button from 'primevue/button'
 </script>
 
-<!-- <style scoped>
+<style scoped>
 .custom-card-shape::before {
     content: "";
     position: absolute;
@@ -23,20 +23,19 @@ import Card from 'primevue/card'
     z-index: 10;
 }
 
-.custom-card-shape::after {
+/* .custom-card-shape::after {
     content: "";
     position: absolute;
     background-color: white;
-    /* Sesuaikan dengan warna latar card */
     z-index: 10;
-}
+} */
 
 /* Potongan kiri atas */
 .custom-card-shape::before {
     top: 0;
     left: 0;
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     clip-path: polygon(0 0, 100% 0, 0 100%);
 }
 
@@ -48,4 +47,4 @@ import Card from 'primevue/card'
     height: 40px;
     clip-path: polygon(100% 100%, 0 100%, 100% 0);
 }
-</style> -->
+</style>
