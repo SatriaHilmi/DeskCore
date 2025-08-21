@@ -12,10 +12,10 @@
       </div>
 
       <div class="flex space-x-4 justify-center">
-        <router-link to="/" class="text-blue-600 font-bold hover:text-blue-400 underline"
-          active-class="font-bold text-blue-800" exact-active-class="font-bold text-blue-800">Home</router-link>
-        <router-link to="/about" class="text-blue-600 font-bold hover:text-blue-400 underline"
-          active-class="font-bold text-blue-800" exact-active-class="font-bold text-blue-800">About</router-link>
+        <router-link to="/" class="text-blue-600 font-bold hover:text-blue-400" active-class="font-bold text-blue-800"
+          exact-active-class="font-bold text-blue-800">Home</router-link>
+        <router-link to="/case-study" class="text-blue-600 font-bold hover:text-blue-400"
+          active-class="font-bold text-blue-800" exact-active-class="font-bold text-blue-800">Case Study</router-link>
       </div>
 
       <div class="flex items-center">
@@ -25,7 +25,7 @@
 
     <main class="flex-1 justify-center">
       <router-view />
-      <footer class="flex items-center justify-center p-2 bg-blue-800 text-white w-full sticky bottom-0 z-50">
+      <footer class="flex items-center justify-center p-2 bg-blue-600 text-white w-full sticky bottom-0 z-50">
         <p>© 2025 VistrionTech. All rights reserved.</p>
       </footer>
     </main>

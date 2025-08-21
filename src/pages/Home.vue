@@ -64,44 +64,25 @@
         Case Study</h1>
     <div class="card mb-10 md:mx-10 lg:mx-20"
         v-animateonscroll="{ enterClass: 'animate-enter fade-in-10 slide-in-from-t-20 animate-duration-1000' }">
-        <Stepper value="1">
-            <StepItem value="1">
-                <Step>Header I</Step>
+        <Stepper v-model="active" class="w-full">
+            <StepItem v-for="(item, index) in CaseStudies" :key="item.id" :value="index + 1">
+                <Step class="text-blue-500 font-semibold">{{ item.title }}</Step>
                 <StepPanel v-slot="{ activateCallback }">
                     <div class="flex flex-col h-48">
                         <div
                             class="border-2 border-dashed border-surface-200 dark:border-surface-700 rounded bg-surface-50 dark:bg-surface-950 flex-auto flex justify-center items-center font-medium">
-                            Content I</div>
-                    </div>
-                    <div class="py-6">
-                        <Button label="Next" @click="activateCallback('2')" />
-                    </div>
-                </StepPanel>
-            </StepItem>
-            <StepItem value="2">
-                <Step>Header II</Step>
-                <StepPanel v-slot="{ activateCallback }">
-                    <div class="flex flex-col h-48">
-                        <div
-                            class="border-2 border-dashed border-surface-200 dark:border-surface-700 rounded bg-surface-50 dark:bg-surface-950 flex-auto flex justify-center items-center font-medium">
-                            Content II</div>
+                            <img :src="item.banner" alt="salon" class="w-full h-full object-contain">
+                        </div>
+                        <div class="flex flex-col items-start mt-4">
+                            <p class="text-sm text-gray-500">{{ item.client }}</p>
+                            <p class="text-xs text-gray-400">{{ new Date(item.date).toLocaleDateString() }}</p>
+                            <p class="text-sm text-gray-500">{{ item.excerpt }}</p>
+                        </div>
                     </div>
                     <div class="flex py-6 gap-2">
-                        <SecondaryButton label="Back" @click="activateCallback('1')" />
-                        <Button label="Next" @click="activateCallback('3')" />
-                    </div>
-                </StepPanel>
-            </StepItem>
-            <StepItem value="3">
-                <Step>Header III</Step>
-                <StepPanel v-slot="{ activateCallback }">
-                    <div class="flex flex-col h-48">
-                        <div
-                            class="border-2 border-dashed border-surface-200 dark:border-surface-700 rounded bg-surface-50 dark:bg-surface-950 flex-auto flex justify-center items-center font-medium">
-                            Content III</div>
-                    </div>
-                    <div class="py-6">
-                        <SecondaryButton label="Back" @click="activateCallback('2')" />
+                        <Button v-if="index < CaseStudies.length - 1" label="Next"
+                            @click="activateCallback((index + 2))" />
+                        <SecondaryButton v-if="index > 0" label="Back" @click="activateCallback((index))" />
                     </div>
                 </StepPanel>
             </StepItem>
@@ -112,21 +93,23 @@
         <div class="grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-1 gap-6 max-w-6xl w-full">
             <!-- Kolom kiri -->
             <div class="md:text-left flex flex-col items-center md:items-start justify-center">
-                <h1 class="text-3xl md:text-5xl font-bold mb-5 text-blue-600">
+                <h1 class="text-3xl md:text-6xl font-bold mb-5 text-blue-600">
                     Contact Us
                 </h1>
-                <p class="text-sm mb-8">
-                    We’d really love to hear from you so why not drop us an Email and we’ll
-                    get back to you as soon as we can.
+                <p class="mb-8">
+                    We’d be delighted to hear from you! Just drop us a message via Email or WhatsApp, and we’ll respond
+                    as soon as we can.
                 </p>
                 <div class="flex items-center gap-4 mb-4">
                     <i
                         class="pi pi-whatsapp text-3xl text-green-600 font-bold border-2 border-green-600 p-2 rounded-full"></i>
-                    <h1 class="text-lg text-green-600">+628267788849</h1>
+                    <h1 class="text-lg text-green-600">+6285755164454</h1>
+                    <h3>|</h3>
+                    <h1 class="text-lg text-green-600">+6282363159160</h1>
                 </div>
                 <div class="flex items-center gap-4 mb-4">
                     <i class="pi pi-envelope text-3xl text-black font-bold p-2"></i>
-                    <h1 class="text-lg">Naufal@gmail.com</h1>
+                    <h1 class="text-lg">Vistriontech@gmail.co.id</h1>
                 </div>
             </div>
 
@@ -140,16 +123,60 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
 import TypingEffect from '../components/TypingEffect.vue';
 import Card from '../components/Card.vue';
 import Button from '../volt/Button.vue';
-import SecondaryButton from '../volt/SecondaryButton.vue';
+// import SecondaryButton from '../volt/SecondaryButton.vue';
 import Splitter from '../volt/Splitter.vue';
 import SplitterPanel from 'primevue/splitterpanel';
 import Stepper from '../volt/Stepper.vue';
 import Step from '../volt/Step.vue';
 import StepPanel from '../volt/StepPanel.vue';
 import StepItem from '../volt/StepItem.vue';
+import SecondaryButton from '../volt/SecondaryButton.vue';
+
+interface CaseStudyItem {
+    id: number;
+    title: string;
+    client: string;
+    date: string;
+    logo: string;
+    banner: string;
+    excerpt: string;
+}
+
+const active = ref(1);
+
+const CaseStudies = ref<CaseStudyItem[]>([
+    {
+        id: 1,
+        title: 'iFarms',
+        client: 'PT. iFarms Indonesia',
+        date: '2023-01-15',
+        logo: '/assets/ifarms-logo.png',
+        banner: '/assets/contact.png',
+        excerpt: 'A comprehensive farm management system that optimizes agricultural processes.'
+    },
+    {
+        id: 2,
+        title: 'Retail Analytics Suite',
+        client: 'Retail Corp',
+        date: '2023-02-20',
+        logo: '/assets/retail-logo.png',
+        banner: '/assets/retail-banner.jpg',
+        excerpt: 'An analytics platform that provides insights into retail operations and customer behavior.'
+    },
+    {
+        id: 3,
+        title: 'Logistics Optimizer',
+        client: 'Logistics Solutions',
+        date: '2023-03-10',
+        logo: '/assets/logistics-logo.png',
+        banner: '/assets/logistics-banner.jpg',
+        excerpt: 'A logistics management system that streamlines supply chain operations and reduces costs.'
+    }
+]);
 
 </script>
 
