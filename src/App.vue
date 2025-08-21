@@ -24,6 +24,8 @@
     </nav>
 
     <main class="flex-1 justify-center">
+      <!-- <div class="absolute inset-0 bg-[url('/assets/blue.jpg')] bg-cover bg-center opacity-10">
+      </div> -->
       <router-view />
       <footer class="flex items-center justify-center p-2 bg-blue-600 text-white w-full sticky bottom-0 z-50">
         <p>© 2025 VistrionTech. All rights reserved.</p>

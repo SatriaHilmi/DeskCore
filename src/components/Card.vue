@@ -3,7 +3,7 @@
         <Card>
             <template #header>
                 <img alt="user header" class="w-full shadow-md rounded-2xl"
-                    src="https://primefaces.org/cdn/primevue/images/card-vue.jpg" />
+                    src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1600&auto=format&fit=crop" />
             </template>
         </Card>
     </div>

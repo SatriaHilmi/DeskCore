@@ -1,4 +1,6 @@
 <template>
+    <!-- <div class="absolute inset-7 bg-[url('/assets/blue.jpg')] bg-cover bg-center opacity-10">
+    </div> -->
     <div class="p-4 justify-center items-center text-center">
         <TypingEffect />
     </div>
@@ -68,10 +70,10 @@
             <StepItem v-for="(item, index) in CaseStudies" :key="item.id" :value="index + 1">
                 <Step class="text-blue-500 font-semibold">{{ item.title }}</Step>
                 <StepPanel v-slot="{ activateCallback }">
-                    <div class="flex flex-col h-48">
+                    <div class="flex flex-col h-64">
                         <div
                             class="border-2 border-dashed border-surface-200 dark:border-surface-700 rounded bg-surface-50 dark:bg-surface-950 flex-auto flex justify-center items-center font-medium">
-                            <img :src="item.banner" alt="salon" class="w-full h-full object-contain">
+                            <img :src="item.banner" alt="salon" class="w-full h-60 object-cover rounded">
                         </div>
                         <div class="flex flex-col items-start mt-4">
                             <p class="text-sm text-gray-500">{{ item.client }}</p>
@@ -79,10 +81,10 @@
                             <p class="text-sm text-gray-500">{{ item.excerpt }}</p>
                         </div>
                     </div>
-                    <div class="flex py-6 gap-2">
+                    <div class="flex py-6 gap-2 mt-12">
+                        <SecondaryButton v-if="index > 0" label="Back" @click="activateCallback((index))" />
                         <Button v-if="index < CaseStudies.length - 1" label="Next"
                             @click="activateCallback((index + 2))" />
-                        <SecondaryButton v-if="index > 0" label="Back" @click="activateCallback((index))" />
                     </div>
                 </StepPanel>
             </StepItem>
@@ -151,30 +153,30 @@ const active = ref(1);
 const CaseStudies = ref<CaseStudyItem[]>([
     {
         id: 1,
-        title: 'iFarms',
-        client: 'PT. iFarms Indonesia',
+        title: 'Sistem Informasi Kelahiran Kambing',
+        client: 'State Polytechnic of Jember',
         date: '2023-01-15',
         logo: '/assets/ifarms-logo.png',
-        banner: '/assets/contact.png',
-        excerpt: 'A comprehensive farm management system that optimizes agricultural processes.'
+        banner: '/assets/kambing.jpg',
+        excerpt: 'A comprehensive farm management system that optimizes animal processes.'
     },
     {
         id: 2,
-        title: 'Retail Analytics Suite',
-        client: 'Retail Corp',
+        title: 'Point of Sale Analytics',
+        client: 'State Polytechnic of Jember',
         date: '2023-02-20',
         logo: '/assets/retail-logo.png',
-        banner: '/assets/retail-banner.jpg',
-        excerpt: 'An analytics platform that provides insights into retail operations and customer behavior.'
+        banner: '/assets/pos.jpg',
+        excerpt: 'An point of sale analytics platform that provides insights into sales and customer behavior.'
     },
     {
         id: 3,
-        title: 'Logistics Optimizer',
-        client: 'Logistics Solutions',
-        date: '2023-03-10',
+        title: 'Reservasi Salon',
+        client: 'Windah Salon',
+        date: '2025-03-10',
         logo: '/assets/logistics-logo.png',
-        banner: '/assets/logistics-banner.jpg',
-        excerpt: 'A logistics management system that streamlines supply chain operations and reduces costs.'
+        banner: '/assets/salon.jpg',
+        excerpt: 'A management reservasion of salon & spa services.'
     }
 ]);
 

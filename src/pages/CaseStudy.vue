@@ -18,10 +18,12 @@
             </div>
         </section>
     </div>
-
+    <hr class="border-t-2 border-blue-400 w-1/2 mx-auto items-center mb-5">
+    <!-- <hr class="border-t-2 border-blue-400 w-70 items-center mb-5">
+    <hr class="border-t-2 border-blue-400 w-50 items-center mb-5"> -->
 
     <!-- CASE STUDY -->
-    <section id="case-study" class="bg-slate-50 border-y border-slate-100">
+    <section id="case-study" class="border-y border-white">
         <div class="container mx-auto px-4 py-16 md:py-24">
             <div class="flex flex-wrap items-end justify-between gap-4">
                 <div>
@@ -44,7 +46,8 @@
 
     <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:mx-10 lg:mx-20 mb-5">
         <article v-for="item in sortedCaseStudies" :key="item.id"
-            class="group rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+            class="group rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm hover:shadow-lg transition-shadow"
+            v-animateonscroll="{ enterClass: 'animate-enter fade-in-10 slide-in-from-t-20 animate-duration-1000' }">
             <div class="flex items-center gap-3 p-5">
                 <img :src="item.logo" :alt="item.title + ' logo'"
                     class="h-10 w-10 rounded-lg object-contain border border-slate-100" />
