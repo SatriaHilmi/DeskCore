@@ -68,7 +68,7 @@
         v-animateonscroll="{ enterClass: 'animate-enter fade-in-10 slide-in-from-t-20 animate-duration-1000' }">
         <Stepper v-model="active" class="w-full">
             <StepItem v-for="(item, index) in CaseStudies" :key="item.id" :value="index + 1">
-                <Step class="text-blue-500 font-semibold">{{ item.title }}</Step>
+                <Step class="font-semibold">{{ item.title }}</Step>
                 <StepPanel v-slot="{ activateCallback }">
                     <div class="flex flex-col h-64">
                         <div
@@ -89,6 +89,11 @@
                 </StepPanel>
             </StepItem>
         </Stepper>
+        <div class="flex justify-center items-center cursor-pointer mt-5">
+            <router-link to="/case-study" class="text-blue-600 font-bold hover:text-blue-400">
+                <ContrastButton label="See More" icon="pi pi-arrow-right" class="ounded-full px-6 py-3" />
+            </router-link>
+        </div>
     </div>
 
     <div class="bg-cover bg-center mt-20 flex justify-center p-5">
@@ -137,6 +142,7 @@ import Step from '../volt/Step.vue';
 import StepPanel from '../volt/StepPanel.vue';
 import StepItem from '../volt/StepItem.vue';
 import SecondaryButton from '../volt/SecondaryButton.vue';
+import ContrastButton from '../volt/ContrastButton.vue';
 
 interface CaseStudyItem {
     id: number;

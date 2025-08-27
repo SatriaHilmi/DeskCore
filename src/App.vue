@@ -6,7 +6,7 @@
 
         <Popover ref="op" class="p-popover">
           <div class="p-4">
-            <p class="text-gray-600 mt-2">Toggle between light and dark mode.</p>
+            <p class="text-gray-600 mt-2">Hello Everyone!.</p>
           </div>
         </Popover>
       </div>
@@ -15,7 +15,7 @@
         <router-link to="/" class="text-blue-600 font-bold hover:text-blue-400" active-class="font-bold text-blue-800"
           exact-active-class="font-bold text-blue-800">Home</router-link>
         <router-link to="/case-study" class="text-blue-600 font-bold hover:text-blue-400"
-          active-class="font-bold text-blue-800" exact-active-class="font-bold text-blue-800">Case Study</router-link>
+          active-class="font-bold text-blue-800" exact-active-class="font-bold text-blue-800">Portofolio</router-link>
       </div>
 
       <div class="flex items-center">

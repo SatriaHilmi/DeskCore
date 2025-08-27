@@ -33,7 +33,7 @@
                 <div class="flex items-center gap-2">
                     <label class="text-sm text-slate-600">Sort by:</label>
                     <select v-model="sortBy"
-                        class="text-sm rounded-xl border-slate-200 focus:ring-2 focus:ring-slate-300">
+                        class="text-sm rounded-xl border-slate-200 focus:ring-2 focus:ring-slate-300 cursor-pointer">
                         <option value="latest">Latest</option>
                         <option value="client">Client</option>
                         <option value="title">Title</option>
@@ -54,6 +54,7 @@
                 <div>
                     <h3 class="font-semibold">{{ item.title }}</h3>
                     <p class="text-xs text-slate-500">{{ item.client }}</p>
+                    <p class="text-xs text-slate-400">{{ new Date(item.date).toLocaleDateString() }}</p>
                 </div>
             </div>
             <img :src="item.banner" :alt="item.title" class="w-full aspect-[16/10] object-cover" />
@@ -85,29 +86,29 @@ const sortBy = ref<'latest' | 'client' | 'title'>('latest')
 const caseStudies = ref<CaseStudyItem[]>([
     {
         id: 1,
-        title: 'iFarms',
-        client: 'PT Pupuk Indonesia',
+        title: 'Sistem Pemesanan Kambing',
+        client: 'Politeknik Negeri Jember',
         date: '2024-12-12',
-        logo: 'https://dummyimage.com/64x64/EEF2FF/1E293B&text=IF',
-        banner: 'https://images.unsplash.com/photo-1599050751795-7711a160b1b3?q=80&w=1200&auto=format&fit=crop',
+        logo: 'https://dummyimage.com/64x64/E0E7FF/0F172A&text=FR',
+        banner: '/assets/kambing.jpg',
         excerpt: 'Smart agriculture platform optimizing fertilizer distribution, forecasting, and real-time field monitoring.'
     },
     {
         id: 2,
-        title: 'PICO',
-        client: 'PT Petrokimia Gresik',
+        title: 'Point of Sales',
+        client: 'Politeknik Negeri Jember',
         date: '2024-10-02',
-        logo: 'https://dummyimage.com/64x64/E0E7FF/0F172A&text=PI',
-        banner: 'https://images.unsplash.com/photo-1546549039-87bf7d6f1f75?q=80&w=1200&auto=format&fit=crop',
+        logo: 'https://dummyimage.com/64x64/E0E7FF/0F172A&text=PO',
+        banner: '/assets/pos.jpg',
         excerpt: 'Operational command dashboard enabling data-driven decisions across plants and warehouses.'
     },
     {
         id: 3,
-        title: 'PKT MASTER',
-        client: 'PT Pupuk Kalimantan Timur',
+        title: 'Reservation Salon',
+        client: 'Freelance Politeknik Negeri Jember',
         date: '2024-08-20',
-        logo: 'https://dummyimage.com/64x64/DBEAFE/111827&text=PK',
-        banner: 'https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=1200&auto=format&fit=crop',
+        logo: 'https://dummyimage.com/64x64/E0E7FF/0F172A&text=SL',
+        banner: '/assets/salon.jpg',
         excerpt: 'Enterprise resource planning suite for asset tracking, maintenance scheduling, and analytics.'
     },
     {
