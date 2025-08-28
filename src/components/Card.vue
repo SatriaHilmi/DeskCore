@@ -1,9 +1,9 @@
 <template>
-    <div class="flex flex-col max-w-lvh custom-card-shape relative overflow-hidden">
-        <Card>
+    <div class="flex flex-col max-w-lvh relative overflow-hidden">
+        <Card class="relative w-[300px] md:w-[400px] lg:w-[500px] xl:w-[600px]">
             <template #header>
-                <img alt="user header" class="w-full shadow-md rounded-2xl"
-                    src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1600&auto=format&fit=crop" />
+                <img alt="user header" class="w-full h-full object-cover shadow-md rounded-2xl"
+                    src="/assets/PeopleCompany.jpg" />
             </template>
         </Card>
     </div>
@@ -34,17 +34,17 @@ import Card from 'primevue/card'
 .custom-card-shape::before {
     top: 0;
     left: 0;
-    width: 60px;
-    height: 60px;
+    width: 90px;
+    height: 90px;
     clip-path: polygon(0 0, 100% 0, 0 100%);
 }
 
 /* Potongan kanan bawah */
-.custom-card-shape::after {
+/* .custom-card-shape::after {
     bottom: 0;
     right: 0;
     width: 40px;
     height: 40px;
     clip-path: polygon(100% 100%, 0 100%, 100% 0);
-}
+} */
 </style>

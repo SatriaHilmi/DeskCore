@@ -12,10 +12,10 @@
       </div>
 
       <div class="flex space-x-4 justify-center">
-        <router-link to="/" class="text-blue-600 font-bold hover:text-blue-400" active-class="font-bold text-blue-800"
-          exact-active-class="font-bold text-blue-800">Home</router-link>
-        <router-link to="/case-study" class="text-blue-600 font-bold hover:text-blue-400"
-          active-class="font-bold text-blue-800" exact-active-class="font-bold text-blue-800">Portofolio</router-link>
+        <router-link to="/" class="text-blue-600 font-bold text-md hover:text-blue-400"
+          active-class="font-bold text-blue-800" exact-active-class="font-bold text-blue-800">HOME</router-link>
+        <router-link to="/case-study" class="text-blue-600 font-bold text-md hover:text-blue-400"
+          active-class="font-bold text-blue-800" exact-active-class="font-bold text-blue-800">PORTOFOLIO</router-link>
       </div>
 
       <div class="flex items-center">

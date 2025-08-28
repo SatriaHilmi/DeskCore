@@ -1,7 +1,7 @@
 <template>
     <!-- <div class="absolute inset-7 bg-[url('/assets/blue.jpg')] bg-cover bg-center opacity-10">
     </div> -->
-    <div class="p-4 justify-center items-center text-center">
+    <div class="p-4 justify-center items-center text-center mt-2">
         <TypingEffect />
     </div>
     <div class="flex flex-col md:flex-row gap-10 items-center mt-10 justify-center">
@@ -12,7 +12,9 @@
             <h3 class="font-semibold text-gray-500">Build & Manage Apps For You, Publish Major</h3>
             <h3 class="font-semibold text-gray-500">Platform Apps</h3>
         </div>
-        <div class="mt-6">
+        <div class="mt-6 relative">
+            <div class="absolute top-4 left-4 w-[300px] md:w-[400px] lg:w-[500px] xl:w-[600px] 
+           h-full rounded-2xl bg-blue-500 shadow-xl"></div>
             <Card />
         </div>
     </div>
@@ -116,7 +118,7 @@
                 </div>
                 <div class="flex items-center gap-4 mb-4">
                     <i class="pi pi-envelope text-3xl text-black font-bold p-2"></i>
-                    <h1 class="text-lg">Vistriontech@gmail.co.id</h1>
+                    <h1 class="text-lg">Vistriontech@gmail.com</h1>
                 </div>
             </div>
 

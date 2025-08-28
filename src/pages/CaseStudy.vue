@@ -11,9 +11,10 @@
                     <p class="mt-4 text-slate-600 max-w-xl">Explore selected projects and case studies that showcase our
                         problem-solving approach, from discovery to delivery.</p>
                 </div>
-                <div class="flex justify-center md:justify-end">
+                <div class="flex justify-center md:justify-end relative">
+                    <div class="absolute top-4 left-4 md:md:w-12/12 h-full shadow-xl rounded-2xl bg-blue-500"></div>
                     <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1600&auto=format&fit=crop"
-                        alt="Hero" class="rounded-2xl shadow-lg w-full md:w-10/12 object-cover" />
+                        alt="Hero" class="relative rounded-2xl shadow-lg w-full md:w-12/12 object-cover" />
                 </div>
             </div>
         </section>
@@ -91,7 +92,7 @@ const caseStudies = ref<CaseStudyItem[]>([
         date: '2024-12-12',
         logo: 'https://dummyimage.com/64x64/E0E7FF/0F172A&text=FR',
         banner: '/assets/kambing.jpg',
-        excerpt: 'Smart agriculture platform optimizing fertilizer distribution, forecasting, and real-time field monitoring.'
+        excerpt: 'Smart farm platform optimizing breeding distribution, forecasting, and real-time field monitoring.'
     },
     {
         id: 2,
@@ -100,7 +101,7 @@ const caseStudies = ref<CaseStudyItem[]>([
         date: '2024-10-02',
         logo: 'https://dummyimage.com/64x64/E0E7FF/0F172A&text=PO',
         banner: '/assets/pos.jpg',
-        excerpt: 'Operational command dashboard enabling data-driven decisions across plants and warehouses.'
+        excerpt: 'Operational command dashboard enabling data and payment gateway for sales.'
     },
     {
         id: 3,
@@ -109,34 +110,34 @@ const caseStudies = ref<CaseStudyItem[]>([
         date: '2024-08-20',
         logo: 'https://dummyimage.com/64x64/E0E7FF/0F172A&text=SL',
         banner: '/assets/salon.jpg',
-        excerpt: 'Enterprise resource planning suite for asset tracking, maintenance scheduling, and analytics.'
+        excerpt: 'Enterprise resource planning suite for reservation, maintenance scheduling, and analytics.'
     },
     {
         id: 4,
-        title: 'DIMAS',
-        client: 'PT Pupuk Indonesia',
+        title: 'Aswaja Trans',
+        client: 'Politeknik Negeri Jember',
         date: '2024-05-11',
-        logo: 'https://dummyimage.com/64x64/CCE0FF/0B1220&text=DM',
-        banner: 'https://images.unsplash.com/photo-1581091014534-8f9e0b1b5bec?q=80&w=1200&auto=format&fit=crop',
-        excerpt: 'Digital monitoring and assurance system integrating IoT telemetry with compliance workflows.'
+        logo: 'https://dummyimage.com/64x64/CCE0FF/0B1220&text=AS',
+        banner: '/assets/Aswaja.jpg',
+        excerpt: 'Digital monitoring and reserve transportation for travel both in payment gateway.'
     },
     {
         id: 5,
-        title: 'PORTAL INTRANET',
-        client: 'PT Pupuk Kalimantan Timur',
+        title: 'Sistem Pendukung Keputusan (DSS)',
+        client: 'freelance Politeknik Negeri Jember',
         date: '2024-03-23',
-        logo: 'https://dummyimage.com/64x64/E2E8F0/0F172A&text=IN',
-        banner: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop',
-        excerpt: 'Modern intranet portal focusing on employee productivity, search, and knowledge sharing.'
+        logo: 'https://dummyimage.com/64x64/E2E8F0/0F172A&text=DS',
+        banner: '/assets/SPK.jpg',
+        excerpt: 'Modern decission support system for music store for client.'
     },
     {
         id: 6,
-        title: 'PUPUK INDONESIA MOBILE',
-        client: 'PT Pupuk Indonesia',
+        title: 'Shortlink Website',
+        client: 'Politeknik Negeri Jember',
         date: '2024-01-15',
-        logo: 'https://dummyimage.com/64x64/F3F4F6/1F2937&text=PI',
-        banner: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?q=80&w=1200&auto=format&fit=crop',
-        excerpt: 'Mobile app providing access to fertilizer distribution, field data, and operational insights.'
+        logo: 'https://dummyimage.com/64x64/F3F4F6/1F2937&text=SH',
+        banner: '/assets/Short.jpg',
+        excerpt: 'Website shortlink for company and organization.'
     }
 ])
 
